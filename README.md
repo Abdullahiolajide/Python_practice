@@ -1,2 +1,2 @@
 # Python_practice
-Just me learning Python
+You'll find a simple working calculator - calculator.py
