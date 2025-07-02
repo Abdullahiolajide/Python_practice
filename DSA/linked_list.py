@@ -33,6 +33,34 @@ class LinkedList:
         new_node = Node(data)
         new_node.next_node = self.head
         self.head = new_node
+
+    def search(self, key):
+        current = self.head
+
+        while current:
+            if current.data == key:
+                return current
+            else:
+                current = current.next_node
+        return None
+
+    def insert(self, data, index):
+        if index == 0:
+            self.add(data)
+
+        if index > 0:
+            new = Node(data)
+
+            position = index
+            current = self.head
+
+            while position > 1:
+                current = current.next_node
+                position -= 1
+            prev_node = current
+            new.next_node = current.next_node
+            prev_node.next_node = new
+
     
     def __repr__(self):
         nodes = []
